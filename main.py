@@ -22,10 +22,9 @@ out_hex = open(os.path.join(here, "hex_test.txt"), "w")
 out_hex.write("LINE|INSTRUCTIONS\n\n")
 
 line_nr = 0
-out_bin.write("LINE|INSTRUCTIONS\n\n")
 
 while(error == 0):
-    error = parse(asm.readline(), out_bin, line_nr)
+    error = parse.parse_line(asm.readline(), out_hex, line_nr)
     line_nr += 1
 
 # Finish
