@@ -1,3 +1,4 @@
+ADD 63
 STP
 SLP
 GUW
@@ -25,3 +26,37 @@ JMP 31
 JMO 63
 JMM 127
 JMZ 255
+
+
+
+        pob b
+        soz s
+h:      pob a
+        som g
+        sob f
+g:      ode b
+        ład a
+        pob c
+        dod d
+        ład c
+        sob h
+f:      pob a
+        ode b
+        som m
+        soz z
+        ład a
+        pob c
+        dod d
+        ład c
+        sob f
+m:      pob c
+        stp
+z:      ład a
+        pob c
+        dod d
+        ład c
+s:      stp
+        a: RST 170
+        b: RST 10
+        c: RST 0
+        d: RST 1
