@@ -7,10 +7,11 @@ here = os.path.dirname(os.path.abspath(__file__))
 
 # Input file
 error = 1
-while(error == 1):
+while error == 1:
     try:
         # asm = open(os.path.join(here, input("Assembly file name: ")), "r")
-        asm = open(os.path.join(here, "test.txt"), "r")
+        asm_filename = "test.txt"
+        asm = open(os.path.join(here, asm_filename), "r")
     except:
         print("File not found\n")
     else:
@@ -18,18 +19,21 @@ while(error == 1):
 
 # Output file
 # out_hex = open(os.path.join(here, input("Hexadecimal file name: ")), "w")
-out_hex = open(os.path.join(here, "hex_test.txt"), "w")
+out_bin = open(os.path.join(here, "bin_" + asm_filename), "w")
+out_bin.write("LINE|INSTRUCTIONS\n\n")
+out_hex = open(os.path.join(here, "hex_" + asm_filename), "w")
 out_hex.write("LINE|INSTRUCTIONS\n\n")
 
 line_nr = 0
 
-while(error == 0):
-    error = parse.parse_line(asm.readline(), out_hex, line_nr)
+while error == 0:
+    error = parse.parse_line(asm.readline(), out_bin, out_hex, line_nr)
     line_nr += 1
 
 # Finish
-print("Succesfully saved to " + out_hex.name)
+print("Succesfully saved to " + out_bin.name + ", " + out_hex.name)
 asm.close()
+out_bin.close()
 out_hex.close()
 
 time.sleep(2)
