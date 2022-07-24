@@ -10,7 +10,7 @@ error = 1
 while error == 1:
     try:
         # asm = open(os.path.join(here, input("Assembly file name: ")), "r")
-        asm_filename = "test.txt"
+        asm_filename = input("Assembly file name: ")
         asm = open(os.path.join(here, asm_filename), "r")
     except:
         print("File not found\n")
