@@ -1,6 +1,6 @@
 import ISA
 
-# ISA.ISA(<opcode length>, <opcode output string>, [<argument lengths list (negative if fill with 0s)>])
+# ISA.ISA(<opcode output string>, [<argument lengths list (negative if fill with 0s)>])
 instruction_length = 12
 
 op_codes = {

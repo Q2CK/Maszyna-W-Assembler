@@ -3,16 +3,14 @@ import opcodes
 
 def append_bits(token, instruction, bit_counter):
     out = ""
-    i = 0
     i_token = 1
-    while i in range(0, len(instruction.arg_lengths)):
-        bit_counter += abs(instruction.arg_lengths[i])
-        if instruction.arg_lengths[i] <= 0:
-            out += "".ljust(abs(instruction.arg_lengths[i]), "0")
+    for i, length in enumerate(instruction.arg_lengths):
+        bit_counter += abs(length)
+        if length <= 0:
+            out += "".ljust(abs(length), "0")
         else:
-            out += format(int(token[i_token]), f'0{instruction.arg_lengths[i]}b')
+            out += format(int(token[i_token]), f'0{length}b')
             i_token += 1
-        i += 1
     return out
 
 

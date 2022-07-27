@@ -18,10 +18,9 @@ while error == 1:
         error = 0
 
 # Output file
-# out_hex = open(os.path.join(here, input("Hexadecimal file name: ")), "w")
-out_bin = open(os.path.join(here, "bin_" + asm_filename), "w")
+out_bin = open(os.path.join(here, f"bin_{asm_filename}"), "w")
 out_bin.write("LINE|INSTRUCTIONS\n\n")
-out_hex = open(os.path.join(here, "hex_" + asm_filename), "w")
+out_hex = open(os.path.join(here, f"hex_{asm_filename}"), "w")
 out_hex.write("LINE|INSTRUCTIONS\n\n")
 
 line_nr = 0
